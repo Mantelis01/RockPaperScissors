@@ -4,33 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
     <script>
         
         let picks=['Rock', 'Paper', 'Scissors'];
-        let pick=picks[Math.floor(Math.random()*picks.length)];
+        let pick=picks[Math.floor(Math.random()*picks.length)]; //parenka random 'x' is array picks[]
+        let pick2=parseInt(prompt("Rock, paper or scissors?"));//Irasomas pasirinkimas i prompt
 
-        function computerPlay(picks){
-            console.log(pick);
+        function computerPlay(pick){
+        }
+        computerPlay(pick);
+
+        function playerPlay(pick2){
         }
 
-        computerPlay(picks);
+        playerPlay(pick2);
+    
+        const playerSelection = playerPlay();
+        const computerSelection = computerPlay();
 
-        function playerPlay(picks){
-            let pick = parseInt(prompt("Pick Rock, Paper Or Scissors: "));
+        function playRound(playerSelection, computerSelection){
+            if(playerSelection==="Rock" && computerSelection==="Scissors"){
+                return("You win! Rock beats scissors!");
+            }
+            else if(playerSelection==="Rock" && computerSelection==="Paper"){
+                return("You loose! Paper beats rock!");
+            }
+            else if(playerSelection==="Rock" && computerSelection==="Rock"){
+                return("Tie!");
+            }
+            else if(playerSelection==="Paper" && computerSelection==="Rock"){
+                return("You win! Paper beats Rock!");}
+            else if(playerSelection==="Paper" && computerSelection==="Scissors"){
+                return("You loose! Scissors beat paper!");}
+            else if(playerSelection==="Paper" && computerSelection==="Paper"){
+                return("Tie!");}
+            else if(playerSelection==="Scissors" && computerSelection==="Rock"){
+                return("You loose! Rock beats scissors");}
+            else if(playerSelection==="Scissors" && computerSelection==="Paper"){
+                return("You Win! Scissors beat paper!");}
+            else if(playerSelection==="Scissors" && computerSelection==="Scissors"){
+                return("Tie!");}
         }
+            
 
-        playerPlay(picks);
-
-        function round(playerPlay,computerPlay){
-            if(playerPlay==='Paper' && computerPlay==='Rock'){
-                console.log("You win, Paper beats rock!");
+        function game(){
+            for(let i=0;i<5;i++){
+                playRound(playerSelection, computerSelection);
+                console.log(playRound(playerSelection, computerSelection));
             }
         }
 
-        round(playerPlay, computerPlay);
+        game();
+
+
     </script>
 </body>
 </html>
