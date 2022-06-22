@@ -1,0 +1,19 @@
+button{
+    width: 80px;
+    height: 40px;
+    background-color:#417D7A;
+    border: solid #1E2022 1px;
+    border-radius: 10px;
+    color: #EDE6DB;
+    justify-content: center;
+    align-items: center;
+}
+
+html{
+    background-color: #EDE6DB;
+    color: #417D7A;
+}
+
+.reset{
+    display: none;
+}
